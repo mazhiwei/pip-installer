@@ -1,3 +1,7 @@
 #!/bin/sh
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
+FILE=get-pip.py
+if [ ! -f $FILE ];then
+  curl https://bootstrap.pypa.io/get-pip.py -o $FILE
+fi
+python $FILE
+
